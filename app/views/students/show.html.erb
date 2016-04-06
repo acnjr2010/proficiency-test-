@@ -1,0 +1,10 @@
+<%= @student.name %>
+<br>
+<%= @student.register_number %>
+<br>
+<% if @student.status == 1 %>
+  Status: Ativo
+<% else %>
+  Status: Inativo
+<% end %>
+<%= link_to 'Voltar', root_path %>

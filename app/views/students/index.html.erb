@@ -1,0 +1,23 @@
+<h2>Lista de Estudantes</h2>
+<table>
+  <tr><td>Nome</td><td>Número de Registro</td><td>Status</td></tr>
+    <% @students.each do |student| %>
+      <tr>
+        <td><%= student.name %></td>
+        <td><%= student.register_number %></td>
+        <td>
+          <% if student.status == 1 %>
+            Ativo
+          <% else %>
+            Inativo
+          <% end %>
+        </td>
+        <td>
+          <%= link_to "Visualizar", student %> | <%= link_to "Editar", edit_student_path(student) %>
+        </td>
+      </tr>
+    <% end %>
+</table>
+
+<br>
+<%= link_to "Novo Estudante", new_student_path %>

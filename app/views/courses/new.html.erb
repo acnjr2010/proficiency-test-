@@ -1,0 +1,7 @@
+<h2>Novo Curso</h2>
+
+<%= form_for @course, url: courses_path, html: { method: :post } do |f| %>
+  <%= render 'form', f: f %>
+<% end %>
+
+<%= link_to 'Voltar', root_path %>

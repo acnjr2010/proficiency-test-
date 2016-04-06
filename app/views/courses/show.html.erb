@@ -1,0 +1,10 @@
+<%= @course.name %>
+<br>
+<%= @course.description %>
+<br>
+<% if @course.status == 1 %>
+  Status: Ativo
+<% else %>
+  Status: Inativo
+<% end %>
+<%= link_to 'Voltar', courses_path %>

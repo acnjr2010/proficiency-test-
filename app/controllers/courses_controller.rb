@@ -2,15 +2,15 @@ class CoursesController < ApplicationController
   before_action :find_course, only: [:show, :edit, :update]
 
   def index
-    @courses = Course.all.order('created_at DESC')
+    @courses = Courses.all.order('created_at DESC')
   end
 
   def new
-    @course = Course.new
+    @course = Courses.new
   end
 
   def create
-    @course = Course.new(course_params)
+    @course = Courses.new(course_params)
 
     if @course.save
       redirect_to @course
@@ -36,10 +36,10 @@ class CoursesController < ApplicationController
   private
 
   def course_params
-    params.require(:course).permit(:name, :description, :status)
+    params.require(:courses).permit(:name, :description, :status)
   end
 
   def find_course
-    @course = Course.find(params[:id])
+    @course = Courses.find(params[:id])
   end
 end

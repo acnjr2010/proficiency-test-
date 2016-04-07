@@ -1,0 +1,7 @@
+Nome do Aluno: <%= @classroom.students.name %>
+<br>
+Curso Matrículado: <%= @classroom.courses.name %>
+<br>
+Data da Matrícula: <%= @classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %>
+<br>
+<%= link_to 'Voltar', root_path %>

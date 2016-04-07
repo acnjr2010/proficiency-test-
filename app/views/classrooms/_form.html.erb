@@ -1,0 +1,20 @@
+<p>
+  <%= f.label :courses_id, "Curso" %><br>
+  <%= f.select :courses_id, :include_blank => true do %>
+    <% Courses.all.each do |course| %>
+      <%= content_tag(:option, course.name, value: course.id) %>
+    <% end %>
+  <% end %>
+</p>
+
+<p>
+  <%= f.label :students_id, "Aluno" %><br>
+  <%= f.select(:students_id) do %>
+    <% Students.all.each do |student| %>
+      <%= content_tag(:option, student.name, value: student.id) %>
+    <% end %>
+  <% end %>
+</p>
+
+<%= f.hidden_field :entry_at, value: Time.now %>
+<%= f.submit %>

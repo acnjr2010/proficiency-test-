@@ -1,6 +1,6 @@
 <h2>Lista de Estudantes</h2>
-<table>
-  <tr><td>Nome</td><td>Número de Registro</td><td>Status</td></tr>
+<table class="table table-striped">
+  <tr><td>Nome</td><td>Número de Registro</td><td>Status</td><td>Opções</td></tr>
     <% @students.each do |student| %>
       <tr>
         <td><%= student.name %></td>
@@ -13,11 +13,11 @@
           <% end %>
         </td>
         <td>
-          <%= link_to "Visualizar", student %> | <%= link_to "Editar", edit_student_path(student) %>
+          <%= link_to "Visualizar", student, class: "btn-sm btn-default" %> | <%= link_to "Editar", edit_student_path(student), class: "btn-sm btn-default" %>
         </td>
       </tr>
     <% end %>
 </table>
 
 <br>
-<%= link_to "Novo Estudante", new_student_path %>
+<%= link_to "Novo Estudante", new_student_path, class: "btn btn-primary" %>

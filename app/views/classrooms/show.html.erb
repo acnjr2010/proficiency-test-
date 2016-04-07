@@ -1,7 +1,19 @@
-Nome do Aluno: <%= @classroom.students.name %>
-<br>
-Curso Matrículado: <%= @classroom.courses.name %>
-<br>
-Data da Matrícula: <%= @classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %>
-<br>
+<h3 class="title">Dados do Aluno</h3>
+<table class="table table-striped">
+  <tbody>
+    <tr><td>Nome do Aluno: </td><td><%= @classroom.students.name %></td></tr>
+    <tr><td>Número de Registro</td><td><%= @classroom.students.register_number %></td></tr>
+    <tr><td>Status do Aluno</td><td><%= @classroom.students.status %></td></tr>
+  </tbody>
+</table>
+
+<h3 class="title">Curso Matriculado</h3>
+<table class="table table-striped">
+  <tbody>
+    <tr><td>Nome do Curso: </td><td><%= @classroom.courses.name %></td></tr>
+    <tr><td>Descrição do Curso: </td><td><%= @classroom.courses.description %></td></tr>
+    <tr><td>Data de Matrícula: </td><td><%= @classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %></td></tr>
+  </tbody>
+</table>
+
 <%= link_to 'Voltar', root_path %>

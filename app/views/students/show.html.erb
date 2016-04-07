@@ -1,10 +1,30 @@
-<%= @student.name %>
-<br>
-<%= @student.register_number %>
-<br>
-<% if @student.status == 1 %>
-  Status: Ativo
-<% else %>
-  Status: Inativo
-<% end %>
+<h3 class="title">Dados do Aluno</h3>
+<table class="table table-striped">
+  <tbody>
+    <tr><td>Nome do Aluno: </td><td><%= @student.name %></td></tr>
+    <tr><td>Número de Registro</td><td><%= @student.register_number %></td></tr>
+    <tr><td>Status do Aluno</td>
+      <td>
+        <% if @student.status == 1 %>
+          Status: Ativo
+        <% else %>
+          Status: Inativo
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<h3>Cursos Matrículado</h3>
+<table class="table table-striped">
+  <tr><td>Curso</td><td>Descrição</td><td>Data e Hora</td></tr>
+  <% Classroom.all.each do |classroom| %>
+  </tr>
+    <% if classroom.students_id == @student.id %>
+      <td><%= classroom.courses.name %></td><td><%= classroom.courses.description %></td><td><%= classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %></td>
+    <% end %>
+  </tr>
+  <% end %>
+</table>
+
 <%= link_to 'Voltar', students_path %>

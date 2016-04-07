@@ -1,20 +1,18 @@
-<p>
+<div class="form-group">
   <%= f.label :name, "Nome do Curso" %><br>
-  <%= f.text_field :name %>
-</p>
+  <%= f.text_field :name, class: "form-control", placeholder: "Nome do curso sem abreviações" %>
+</div>
 
-<p>
+<div class="form-group">
   <%= f.label :description, "Descrição do Curso" %><br>
-  <%= f.text_field :description %>
-</p>
+  <%= f.text_field :description, class: "form-control", placeholder: "Descrição do curso" %>
+</div>
 
-<p>
-  <%= f.label :status, "Status" %><br>
-  <%= f.select(:status) do %>
-    <% [['Ativo', 1], ['Inativo', 0]].each do |c| %>
-      <%= content_tag(:option, c.first, value: c.last) %>
-    <% end %>
-  <% end %>
-</p>
-
-<%= f.submit %>
+<div class="form-group">
+  <%= f.label :status, "Status" %>
+  <%= f.select :status, [['Ativo', '1'], ['Inativo', '0']], { include_blank: true }, { class: "form-control"}  %>
+</div>
+<br>
+<div class="form-group">
+  <%= f.submit "Enviar", class: "btn btn-primary" %>
+</div>

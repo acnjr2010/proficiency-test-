@@ -1,10 +1,18 @@
-<%= @course.name %>
+<h3 class="title">Dados do Curso</h3>
+<table class="table table-striped">
+  <tbody>
+    <tr><td>Nome do Curso: </td><td><%= @course.name %></td></tr>
+    <tr><td>Descrição do Curso:</td><td><%= @course.description %></td></tr>
+    <tr><td>Status do Curso:</td>
+      <td>
+        <% if @course.status == 1 %>
+          Ativo
+        <% else %>
+          Inativo
+        <% end %>
+      </td>
+    </tr>
+  </tbody>
+</table>
 <br>
-<%= @course.description %>
-<br>
-<% if @course.status == 1 %>
-  Status: Ativo
-<% else %>
-  Status: Inativo
-<% end %>
 <%= link_to 'Voltar', courses_path %>

@@ -1,19 +1,20 @@
 <h2>Matriculas</h2>
-<table>
-  <tr><td>Matricula</td><td>Aluno</td><td>Curso</td><td>Matriculado</td></tr>
-    <% @classrooms.each do |classroom| %>
-      <tr>
-        <td><%= classroom.id %></td>
-        <td><%= classroom.students.name %></td>
-        <td><%= classroom.courses.name %></td>
-        <td><%= classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %></td>
-        <td>
-        <td>
-          <%= link_to "Visualizar", classroom %> | <%= link_to "Editar", edit_classroom_path(classroom) %>
-        </td>
-      </tr>
-    <% end %>
-</table>
 
-<br>
-<%= link_to "Nova Matrícula", new_classroom_path %>
+  <table class="table table-striped">
+    <tr><td>Matricula</td><td>Aluno</td><td>Curso</td><td>Matriculado</td><td>Opções</td></tr>
+      <% @classrooms.each do |classroom| %>
+        <tr>
+          <td><%= classroom.id %></td>
+          <td><%= classroom.students.name %></td>
+          <td><%= classroom.courses.name %></td>
+          <td><%= classroom.entry_at.strftime("%d/%m/%Y - %H:%M:%S") %></td>
+          <td>
+            <%= link_to "Visualizar", classroom, class: "btn-sm btn-default" %> | <%= link_to "Editar", edit_classroom_path(classroom), class: "btn-sm btn-default" %>
+          </td>
+        </tr>
+      <% end %>
+  </table>
+
+  <br>
+  <%= link_to "Nova Matrícula", new_classroom_path, class: "btn btn-primary" %>
+</div>

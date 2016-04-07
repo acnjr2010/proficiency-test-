@@ -1,7 +1,9 @@
 <h2>Editar Informações do Curso</h2>
 
+<!-- Utiliza um render para reutilizar o form em mais de uma página -->
 <%= form_for @course, url: course_path(@course), html: { method: :put } do |f| %>
   <%= render 'form', f: f %>
 <% end %>
 
+<!-- Link que retorna para a lista completa dos cursos -->
 <%= link_to 'Voltar', courses_path %>

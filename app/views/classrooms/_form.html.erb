@@ -1,9 +1,13 @@
+<!-- Formulário que nos selects busca através do collect todos os cursos, tras o name e o id, coloca o campo em branco pelo atributo
+include_blank e utiliza a class form-control do bootstrap -->
 <%= f.label :courses_id, "Curso" %>
 <%= select("classroom", "courses_id", Courses.all.collect {|course| [ course.name, course.id ] }, {include_blank: true}, { class: "form-control"}) %>
 
 <%= f.label :students_id, "Aluno" %>
 <%= select("classroom", "students_id", Students.all.collect {|student| [ student.name, student.id ] }, {include_blank: true}, { class: "form-control"}) %>
 
+<!-- Para salvar o momento do save foi criado um campo oculto solicitando o horário no momento, apesar de ter usado o :entry_at achei que
+poderia ter usado o created_at e economizado um campo na tabela, mas como estava no modelo de relacionamento criei o :entry_at mesmo assim -->
 <%= f.hidden_field :entry_at, value: Time.now %>
 <br>
 <div class="form-group">

@@ -1,5 +1,6 @@
 <h2>Nova Matricula</h2>
 
+<!-- Utiliza um render para reutilizar o form em mais de uma página -->
 <%= form_for @classroom, url: classrooms_path, html: { method: :post } do |f| %>
   <%= render 'form', f: f %>
 <% end %>

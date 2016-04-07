@@ -1,3 +1,4 @@
+<!-- Verifica se tem alguma mensagem de erro para imprimir na tela -->
 <% if @student.errors.any? %>
   <div id="error_explanation">
     <h2><%= pluralize(@student.errors.count, "erro") %> impossibilitaram a continuação do processo:</h2>
@@ -10,6 +11,7 @@
   </div>
 <% end %>
 
+<!-- Formulário utilizando a classe form-control do bootstrap para estilizar o form -->
 <div class="form-group">
   <%= f.label :name, "Nome" %><br>
   <%= f.text_field :name, class: "form-control", placeholder: "Nome Completo" %>

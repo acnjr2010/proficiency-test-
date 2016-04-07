@@ -1,4 +1,5 @@
 <h2>Cursos Cadastrados</h2>
+<!-- Tabela estilizada com bootstrap trazando o nome, descrição e status do curso -->
 <table class="table table-striped">
   <tr><td>Cursos</td><td>Descrição</td><td>Status</td><td>Opções</td></tr>
     <% @courses.each do |course| %>
@@ -20,4 +21,5 @@
 </table>
 
 <br>
+<!-- Link leva ao formulário para criar um novo curso -->
 <%= link_to "Novo Curso", new_course_path, class: "btn btn-primary" %>
